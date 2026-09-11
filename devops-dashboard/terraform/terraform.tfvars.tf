@@ -5,7 +5,7 @@ aws_region   = "us-east-1"
 project_name = "devops-dashboard"
 environment  = "production"
 
-github_owner     = "YOUR_GITHUB_USERNAME"
+github_owner     = "aryan-95"
 github_repo_name = "devops-dashboard"
 github_repo_url  = "https://github.com/aryan-95/devops_dashboard.git"
 github_branch    = "main"
