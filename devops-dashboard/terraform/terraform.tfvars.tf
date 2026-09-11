@@ -12,7 +12,7 @@ github_branch    = "main"
 
 # Create this once manually: AWS Console -> Developer Tools -> Settings -> Connections
 # -> Create connection -> GitHub -> Authorize -> copy the ARN here.
-codestar_connection_arn = "arn:aws:codestar-connections:us-east-1:123456789012:connection/REPLACE-ME"
+codestar_connection_arn = "arn:aws:codeconnections:us-east-1:196253396964:connection/de78e758-4ffb-4199-9b6e-c731583b9c7e"
 
 # Optional: get CloudWatch alarm emails
 alarm_email = ""
