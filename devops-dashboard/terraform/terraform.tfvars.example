@@ -1,0 +1,25 @@
+# Copy this file to terraform.tfvars and fill in your own values.
+# terraform.tfvars is git-ignored so you never commit secrets/identifiers.
+
+aws_region   = "us-east-1"
+project_name = "devops-dashboard"
+environment  = "production"
+
+github_owner     = "YOUR_GITHUB_USERNAME"
+github_repo_name = "devops-dashboard"
+github_repo_url  = "https://github.com/YOUR_GITHUB_USERNAME/devops-dashboard.git"
+github_branch    = "main"
+
+# Create this once manually: AWS Console -> Developer Tools -> Settings -> Connections
+# -> Create connection -> GitHub -> Authorize -> copy the ARN here.
+codestar_connection_arn = "arn:aws:codestar-connections:us-east-1:123456789012:connection/REPLACE-ME"
+
+# Optional: get CloudWatch alarm emails
+alarm_email = ""
+
+# Keep these small for a low-cost student deployment
+instance_type      = "t3.micro"
+db_instance_class  = "db.t3.micro"
+asg_min_size       = 2
+asg_desired_capacity = 2
+asg_max_size       = 4

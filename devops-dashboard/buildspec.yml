@@ -1,0 +1,46 @@
+version: 0.2
+
+env:
+  variables:
+    PYTHON_VERSION: "3.11"
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.11
+    commands:
+      - echo "Installing dependencies..."
+      - cd app
+      - pip install --upgrade pip
+      - pip install -r requirements.txt
+
+  pre_build:
+    commands:
+      - echo "Running automated tests..."
+      - pytest tests/ -v --junitxml=test-results.xml
+
+  build:
+    commands:
+      - echo "Validating application can import cleanly..."
+      - python -c "from app import create_app; create_app(); print('App factory OK')"
+      - echo "Packaging deployment artifact..."
+      - cd ..
+      - zip -r app-artifact.zip app buildspec.yml -x "app/tests/*" "app/__pycache__/*"
+
+  post_build:
+    commands:
+      - echo "Build completed on $(date)"
+      - echo "Artifact contents:"
+      - unzip -l app-artifact.zip | head -30
+
+artifacts:
+  files:
+    - app-artifact.zip
+    - buildspec.yml
+  discard-paths: no
+
+reports:
+  pytest_reports:
+    files:
+      - app/test-results.xml
+    file-format: JUNITXML
