@@ -7,7 +7,7 @@ environment  = "production"
 
 github_owner     = "YOUR_GITHUB_USERNAME"
 github_repo_name = "devops-dashboard"
-github_repo_url  = "https://github.com/YOUR_GITHUB_USERNAME/devops-dashboard.git"
+github_repo_url  = "https://github.com/aryan-95/devops_dashboard.git"
 github_branch    = "main"
 
 # Create this once manually: AWS Console -> Developer Tools -> Settings -> Connections
